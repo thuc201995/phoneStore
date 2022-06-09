@@ -1,0 +1,11 @@
+{
+  "create": "create",
+  "status": "status",
+  "createdAt": "created at",
+  "updatedAt": "updated at",
+  "submit": "submit",
+  "cancel": "cancel",
+  "completed": "Completed",
+  "inProgress": "In Progress",
+  "stopped": "Stopped"
+}

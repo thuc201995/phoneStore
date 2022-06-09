@@ -1,0 +1,19 @@
+{
+  "newBook": "new book",
+  "listBook": "list book",
+  "crawlerPage": "crawler page",
+  "createANewBook": "create a new book",
+  "author": "author",
+  "category": "category",
+  "status": "status",
+  "publish": "publish",
+  "releaseDate": "release date",
+  "completed": "Completed",
+  "inProgress": "In Progress",
+  "stopped": "Stopped",
+  "introduction": "introduction",
+  "title": "title",
+  "pleaseEnterBookTitle": "Please enter book title",
+  "pleaseEnterTheAuthor": "Please enter the author",
+  "selectDate": "Please selecte date"
+}
