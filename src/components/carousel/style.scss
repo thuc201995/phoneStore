@@ -33,5 +33,9 @@
   .store_carousel_item {
     width: 100vw;
     height: 375px;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    color: RGBA(0, 0, 0, 0);
   }
 }

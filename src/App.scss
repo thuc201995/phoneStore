@@ -10,6 +10,7 @@ body {
 }
 .container {
   max-width: 1200px;
+  margin: 0 auto;
 }
 .heading_title {
   color: #d2d2d7;
@@ -44,4 +45,7 @@ body {
 }
 .capitalize {
   text-transform: capitalize;
+}
+.mt_20 {
+  margin-top: 20px !important;
 }

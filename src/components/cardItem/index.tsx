@@ -5,11 +5,12 @@ import "./style.scss";
 const { Meta } = Card;
 interface Props {
   title?: string;
+  image?: string;
 }
-const CardItem: React.FC<Props> = ({ title }) => {
+const CardItem: React.FC<Props> = ({ title, image }) => {
   return (
     <Card
-      cover={<img alt="example" height={280} src={product_1} />}
+      cover={<img alt="example" height={280} src={image || product_1} />}
       className="card_item"
     >
       <Meta
