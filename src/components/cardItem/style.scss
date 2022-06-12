@@ -1,0 +1,20 @@
+.card_item {
+  border-radius: 10px !important;
+  transition: background 0.3s, border 0.2s, border-radius 0.2s, box-shadow 0.2s;
+  &:hover {
+    box-shadow: 1px 1px 28px 0px rgb(0 0 0 / 12%);
+  }
+  .ant-card-meta-title {
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 27px;
+    min-height: 54px;
+  }
+}

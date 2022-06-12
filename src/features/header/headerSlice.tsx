@@ -4,6 +4,43 @@ export const headerSilce = createSlice({
   name: "header",
   initialState: {
     isFixed: false,
+    menu: [
+      {
+        title: "Iphone",
+        link: "/iphone",
+      },
+      {
+        link: "/ipad",
+        title: "Ipad",
+      },
+      {
+        link: "/iphone",
+        title: "Mac",
+      },
+      {
+        link: "/iphone",
+        title: "Appple Watch",
+      },
+      {
+        link: "/iphone",
+        title: "Âm thanh",
+      },
+      {
+        link: "/iphone",
+        title: "Phụ kiện",
+      },
+      {
+        title: "Dịch vụ",
+      },
+      {
+        link: "/iphone",
+        title: "Khuyến mãi",
+      },
+      {
+        link: "/iphone",
+        title: "Trả Góp",
+      },
+    ],
   },
   reducers: {
     toggleFixed: (state) => {

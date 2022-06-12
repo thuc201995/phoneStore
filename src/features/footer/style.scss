@@ -1,0 +1,11 @@
+.store_footer {
+  background: #1d1d1f !important;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0 !important;
+  .footer_icon_item {
+    margin-right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}

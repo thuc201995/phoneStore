@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
 import logger from "redux-logger";
-import createBookReducer from "./features/createBook/createBookSlice";
-import headerReducer from "./features/header/headerSlice";
-import siderReducer from "./features/sider/siderSlice";
+import headerSlice from "./features/header/headerSlice";
+import footerSlice from "./features/footer/footerSlice";
+import { apiSlice } from "./features/api/apiSlice";
+
 export const store = configureStore({
   reducer: {
-    createBook: createBookReducer,
-    header: headerReducer,
-    sider: siderReducer,
+    header: headerSlice,
+    footer: footerSlice,
+    [apiSlice.reducerPath]: apiSlice.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(logger).concat(apiSlice.middleware),
   devTools: process.env.NODE_ENV !== "production",
 });
 

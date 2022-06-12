@@ -1,38 +1,32 @@
-import { Sider, Header, Content, PerfectScroll } from "./features";
-import { Layout, Main } from "./components";
+import { Layout, Image, Row, Col } from "antd";
+import { Header, Footer, Subscriber } from "./features";
 import { Route, Routes } from "react-router-dom";
-import { Books } from "./pages";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleFixed } from "./features/header/headerSlice";
-import { RootState } from "./store";
+import { Product, AppleWatch, IPad, IPhone, PhuKien, Home } from "./pages";
 import "antd/dist/antd.min.css";
 import "./App.scss";
 import "react-perfect-scrollbar/dist/css/styles.css";
 
-const App = () => {
-  const dispatch = useDispatch();
-  const isFixedHeader = useSelector((state: RootState) => state.header.isFixed);
-  const collapsed = useSelector((state: RootState) => state.sider.collapsed);
-  const handleScroll = (container: any) => {
-    if (container?.target.scrollTop === 0 && isFixedHeader !== false)
-      dispatch(toggleFixed());
-    if (container?.target.scrollTop > 50 && isFixedHeader !== true)
-      dispatch(toggleFixed());
-  };
-  return (
-    <Layout className="app">
-      <Sider collapsed={collapsed} />
-      <Main>
-        <PerfectScroll onScroll={handleScroll} className="content_wrapper">
-          <Header></Header>
+const { Content } = Layout;
 
-          <Content>
-            <Routes>
-              <Route path="/book" element={<Books />} />
-            </Routes>
-          </Content>
-        </PerfectScroll>
-      </Main>
+const App = () => {
+  return (
+    <Layout className="layout">
+      <Header />
+
+      <Content>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="iphone" element={<Product category="iphone" />} />
+          <Route path="ipad" element={<Product category="ipad" />} />
+          {/* 
+          <Route path="mac" element={<Product />} />
+          <Route path="apple-watch" element={<Product />} />
+          <Route path="am-thanh" element={<Product />} />
+          <Route path="phu-kien" element={<Product />} /> */}
+        </Routes>
+      </Content>
+      <Subscriber />
+      <Footer />
     </Layout>
   );
 };

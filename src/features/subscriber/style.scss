@@ -1,0 +1,49 @@
+@import "../../variable";
+.store_subscriber {
+  height: 250px;
+  min-height: 250px;
+  background: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .store_subscriber_title {
+    color: $--e-global-color-e5ebd69;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .store_subscriber_description {
+    color: $--e-global-color-e5ebd69;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  .store_subscriber_form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 25px;
+    .subscriber_input {
+      margin-bottom: 0;
+      input {
+        height: 40px;
+        border-radius: 20px;
+        width: 500px;
+      }
+    }
+    .store_subscriber_submit_btn {
+      font-family: "SF Pro Text", Arial;
+      font-size: 15px;
+      font-weight: 500;
+      background-color: $--e-global-color-ab81b1d;
+      color: #fff;
+      height: 40px;
+      padding-left: 60px;
+      padding-right: 60px;
+      border-radius: 20px;
+      margin-left: 5px;
+    }
+  }
+}
