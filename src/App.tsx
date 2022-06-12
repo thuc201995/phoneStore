@@ -1,4 +1,4 @@
-import { Layout, Image, Row, Col } from "antd";
+import { Layout } from "antd";
 import { Header, Footer, Subscriber } from "./features";
 import { Route, Routes } from "react-router-dom";
 import { Product, Home } from "./pages";
