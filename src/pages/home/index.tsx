@@ -25,16 +25,16 @@ const Home = () => {
         style={{ margin: "0 auto" }}
       >
         <Row gutter={20}>
-          <Col span={6}>
+          <Col span={6} xs={24}>
             <CardItem title="iMac M1 2021 24 inch (8GPU/16GB/256GB)"></CardItem>
           </Col>
-          <Col span={6}>
+          <Col span={6} xs={24}>
             <CardItem></CardItem>
           </Col>
-          <Col span={6}>
+          <Col span={6} xs={24}>
             <CardItem></CardItem>
           </Col>
-          <Col span={6}>
+          <Col span={6} xs={24}>
             <CardItem></CardItem>
           </Col>
         </Row>
