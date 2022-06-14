@@ -7,34 +7,44 @@ import "./style.scss";
 const Home = () => {
   return (
     <div>
-      <Carousel>
-        <div>
-          <Image className="store_carousel_item" src={banner_1} preview={false}>
-            1
-          </Image>
-        </div>
-        <div>
-          <Image className="store_carousel_item" src={banner_2} preview={false}>
-            2
-          </Image>
-        </div>
-      </Carousel>
+      <div className="home_carrousel_wrapper">
+        <Carousel>
+          <div>
+            <Image
+              className="store_carousel_item"
+              src={banner_1}
+              preview={false}
+            >
+              1
+            </Image>
+          </div>
+          <div>
+            <Image
+              className="store_carousel_item"
+              src={banner_2}
+              preview={false}
+            >
+              2
+            </Image>
+          </div>
+        </Carousel>
+      </div>
 
       <div
         className="site-layout-content container"
         style={{ margin: "0 auto" }}
       >
         <Row gutter={20}>
-          <Col span={6} xs={24}>
+          <Col lg={6} xs={12}>
             <CardItem title="iMac M1 2021 24 inch (8GPU/16GB/256GB)"></CardItem>
           </Col>
-          <Col span={6} xs={24}>
+          <Col lg={6} xs={12}>
             <CardItem></CardItem>
           </Col>
-          <Col span={6} xs={24}>
+          <Col lg={6} xs={12}>
             <CardItem></CardItem>
           </Col>
-          <Col span={6} xs={24}>
+          <Col lg={6} xs={12}>
             <CardItem></CardItem>
           </Col>
         </Row>

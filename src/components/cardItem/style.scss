@@ -17,4 +17,27 @@
     line-height: 27px;
     min-height: 54px;
   }
+  .card_item_old_price {
+    color: #86868b;
+    font-weight: normal;
+    text-decoration: line-through;
+    &::after {
+      content: " ₫";
+    }
+  }
+  .card_item_price {
+    font-weight: 600;
+    color: #0066cc;
+    font-size: 15px;
+    &::after {
+      content: " ₫";
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .card_item_img {
+      width: 159px;
+      height: 159px;
+    }
+  }
 }

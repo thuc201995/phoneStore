@@ -21,8 +21,13 @@ const Product: React.FC<Props> = ({ category, className }) => {
       <Row gutter={[20, 20]}>
         {product?.data.map((item: any) => {
           return (
-            <Col span={6} key={item.id}>
-              <CardItem title={item.name} image={item.image}></CardItem>
+            <Col lg={6} xs={12} key={item.id}>
+              <CardItem
+                title={item.name}
+                image={item.image}
+                price={item.price}
+                discountPrice={item.discount_price}
+              ></CardItem>
             </Col>
           );
         })}

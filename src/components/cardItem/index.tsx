@@ -6,16 +6,35 @@ const { Meta } = Card;
 interface Props {
   title?: string;
   image?: string;
+  price?: string | number;
+  discountPrice?: string | number;
 }
-const CardItem: React.FC<Props> = ({ title, image }) => {
+const CardItem: React.FC<Props> = ({ title, image, price, discountPrice }) => {
   return (
     <Card
-      cover={<img alt="example" height={280} src={image || product_1} />}
+      cover={
+        <img alt="example" className="card_item_img" src={image || product_1} />
+      }
       className="card_item"
     >
       <Meta
         title={title || "iPhone 13 Pro Max"}
-        description="Giá từ 28.990.000 ₫"
+        description={
+          discountPrice ? (
+            <span>
+              <span className="card_item_old_price mr_5">
+                {price?.toLocaleString()}
+              </span>
+              <span className="card_item_price">
+                {discountPrice?.toLocaleString()}
+              </span>
+            </span>
+          ) : (
+            <span className="card_item_price">
+              Giá từ {price?.toLocaleString()}
+            </span>
+          )
+        }
       />
     </Card>
   );
