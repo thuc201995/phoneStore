@@ -14,15 +14,25 @@ const SingleProduct: React.FC<Props> = ({ category }) => {
   const location = useLocation();
   console.log(location);
   return (
-    <div className="container mt_20">
+    <div className="container full_width mt_20">
       <Carousel>
         <div>
-          <Image className="store_carousel_item" src={banner_1} preview={false}>
+          <Image
+            className="store_carousel_item"
+            src={banner_1}
+            preview={false}
+            height={375}
+          >
             1
           </Image>
         </div>
         <div>
-          <Image className="store_carousel_item" src={banner_2} preview={false}>
+          <Image
+            className="store_carousel_item"
+            src={banner_2}
+            preview={false}
+            height={375}
+          >
             2
           </Image>
         </div>

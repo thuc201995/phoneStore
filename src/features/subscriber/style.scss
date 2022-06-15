@@ -46,4 +46,17 @@
       margin-left: 5px;
     }
   }
+  @media only screen and (max-width: 600px) {
+    .store_subscriber_form {
+      .subscriber_input {
+        input {
+          width: 200px;
+        }
+      }
+      .store_subscriber_submit_btn {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
 }

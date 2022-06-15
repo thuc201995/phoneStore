@@ -21,7 +21,7 @@ const FooterContainer: React.FC<Props> = () => {
     <Footer className={cn("store_footer")}>
       <div className="container">
         <Row className="mb_60">
-          <Col span={6}>
+          <Col lg={6} xs={24}>
             <Row gutter={[0, 18]}>
               <Col>
                 <Logo />
@@ -41,7 +41,7 @@ const FooterContainer: React.FC<Props> = () => {
               </Col>
             </Row>
           </Col>
-          <Col span={3} offset={1}>
+          <Col lg={{ span: 3, offset: 1 }} xs={24}>
             <h2 className="heading_title">Sản phẩm</h2>
             {data.sanPham.map((item, index) => {
               return (
@@ -53,7 +53,7 @@ const FooterContainer: React.FC<Props> = () => {
               );
             })}
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} xs={24}>
             <h2 className="heading_title">Thông tin</h2>
             {data.thongTin.map((item, index) => {
               return (
@@ -65,7 +65,7 @@ const FooterContainer: React.FC<Props> = () => {
               );
             })}
           </Col>
-          <Col span={4} offset={1}>
+          <Col lg={{ span: 4, offset: 1 }} xs={24}>
             <h2 className="heading_title">Chính sách</h2>
             {data.chinhSach.map((item, index) => {
               return (
@@ -77,7 +77,7 @@ const FooterContainer: React.FC<Props> = () => {
               );
             })}
           </Col>
-          <Col offset={1} span={3}>
+          <Col lg={{ span: 3, offset: 1 }} xs={24}>
             <h2 className="heading_title">Địa chỉ</h2>
             {data.diaChi.map((item, index) => {
               return (

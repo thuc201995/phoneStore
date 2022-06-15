@@ -19,7 +19,7 @@ const HeaderContainer: React.FC<Props> = () => {
   const navigate = useNavigate();
   return (
     <Header className={cn("store_header")}>
-      <div className="store_header_wrapper container">
+      <div className="store_header_wrapper container full_width">
         <div className="header_logo" onClick={() => navigate("/")}>
           <Logo />
         </div>

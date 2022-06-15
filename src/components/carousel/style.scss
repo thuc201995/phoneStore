@@ -22,6 +22,10 @@
       background: #515154;
     }
     z-index: 100;
+    &.large_size {
+      width: 52px;
+      height: 52px;
+    }
   }
   .carousel_control_prev {
     left: 40px;
@@ -38,5 +42,16 @@
     min-height: 100% !important;
     object-fit: cover;
     color: RGBA(0, 0, 0, 0);
+  }
+  @media only screen and (max-width: 600px) {
+    .header_menu {
+      display: none;
+    }
+    .carousel_control_prev {
+      left: 5px;
+    }
+    .carousel_control_next {
+      right: 5px;
+    }
   }
 }

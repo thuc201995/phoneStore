@@ -8,12 +8,13 @@ const Home = () => {
   return (
     <div>
       <div className="home_carrousel_wrapper">
-        <Carousel>
+        <Carousel size="large">
           <div>
             <Image
               className="store_carousel_item"
               src={banner_1}
               preview={false}
+              height={475}
             >
               1
             </Image>
@@ -23,6 +24,7 @@ const Home = () => {
               className="store_carousel_item"
               src={banner_2}
               preview={false}
+              height={475}
             >
               2
             </Image>
@@ -34,7 +36,12 @@ const Home = () => {
         className="site-layout-content container"
         style={{ margin: "0 auto" }}
       >
-        <Row gutter={20}>
+        <Row
+          gutter={[
+            { xs: 5, lg: 20 },
+            { xs: 5, lg: 20 },
+          ]}
+        >
           <Col lg={6} xs={12}>
             <CardItem title="iMac M1 2021 24 inch (8GPU/16GB/256GB)"></CardItem>
           </Col>

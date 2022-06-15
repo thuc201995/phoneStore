@@ -53,3 +53,8 @@ body {
 .mr_5 {
   margin-right: 5px;
 }
+@media only screen and (max-width: 600px) {
+  .container:not(.full_width) {
+    padding: 20px;
+  }
+}

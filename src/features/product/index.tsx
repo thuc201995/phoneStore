@@ -17,8 +17,13 @@ const Product: React.FC<Props> = ({ category, className }) => {
   } = useGetProductQuery(category);
   console.log(123, product);
   return (
-    <div className={cn(className)}>
-      <Row gutter={[20, 20]}>
+    <div className={cn("container", className)}>
+      <Row
+        gutter={[
+          { xs: 5, lg: 20 },
+          { xs: 5, lg: 20 },
+        ]}
+      >
         {product?.data.map((item: any) => {
           return (
             <Col lg={6} xs={12} key={item.id}>
