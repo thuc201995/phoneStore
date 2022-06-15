@@ -49,6 +49,10 @@
       width: 26px;
       height: 26px;
       background: #81898d;
+      &.large_size {
+        width: 26px;
+        height: 26px;
+      }
     }
     .carousel_control_prev {
       left: 5px;
