@@ -108,5 +108,25 @@ const handler = [
       }
     }
   ),
+  rest.get(
+    "/api/product/:id",
+    // Example of a response resolver that returns
+    // a "Content-Type: application/json" response.
+    (req, res, ctx) => {
+      const { id } = req.params;
+      return res(
+        ctx.json({
+          data: {
+            name: "iphone",
+            color: {
+              red: [iphone13, ipad, ipad, ipad, ipad, ipad, ipad],
+              blue: [],
+              green: [],
+            },
+          },
+        })
+      );
+    }
+  ),
 ];
 export const worker = setupWorker(...handler);

@@ -2,6 +2,7 @@ import { Row, Col } from "antd";
 import React from "react";
 import { CardItem } from "../../components";
 import { useGetProductQuery } from "../api/apiSlice";
+import { Link } from "react-router-dom";
 import cn from "classnames";
 interface Props {
   category: string;
@@ -15,7 +16,6 @@ const Product: React.FC<Props> = ({ category, className }) => {
     isError,
     error,
   } = useGetProductQuery(category);
-  console.log(123, product);
   return (
     <div className={cn("container", className)}>
       <Row
@@ -27,12 +27,14 @@ const Product: React.FC<Props> = ({ category, className }) => {
         {product?.data.map((item: any) => {
           return (
             <Col lg={6} xs={12} key={item.id}>
-              <CardItem
-                title={item.name}
-                image={item.image}
-                price={item.price}
-                discountPrice={item.discount_price}
-              ></CardItem>
+              <Link to={item.id}>
+                <CardItem
+                  title={item.name}
+                  image={item.image}
+                  price={item.price}
+                  discountPrice={item.discount_price}
+                />
+              </Link>
             </Col>
           );
         })}
