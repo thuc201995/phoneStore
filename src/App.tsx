@@ -15,9 +15,10 @@ const App = () => {
       <Content>
         <Routes>
           <Route index element={<Home />} />
-          <Route path="iphone" element={<Product category="iphone" />}></Route>
+          <Route path="iphone" element={<Product category="iphone" />} />
           <Route path="ipad" element={<Product category="ipad" />} />
           <Route path="iphone/:id" element={<ProductDetail />} />
+          <Route path="ipad/:id" element={<ProductDetail />} />
         </Routes>
       </Content>
       <Subscriber />

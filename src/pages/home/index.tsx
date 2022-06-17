@@ -4,6 +4,7 @@ import { Row, Col, Image } from "antd";
 import banner_1 from "../../imgs/banner/banner_1.webp";
 import banner_2 from "../../imgs/banner/banner_2.webp";
 import "./style.scss";
+import { Product } from "../../features";
 const Home = () => {
   return (
     <div>
@@ -36,6 +37,8 @@ const Home = () => {
         className="site-layout-content container"
         style={{ margin: "0 auto" }}
       >
+        <Product category={"home"} className="mt_20" />
+        {/* 
         <Row
           gutter={[
             { xs: 5, lg: 20 },
@@ -54,7 +57,7 @@ const Home = () => {
           <Col lg={6} xs={12}>
             <CardItem></CardItem>
           </Col>
-        </Row>
+        </Row> */}
       </div>
     </div>
   );

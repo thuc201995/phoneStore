@@ -1,6 +1,7 @@
 import { setupWorker, rest } from "msw";
 import iphone13 from "./imgs/product/ip13.webp";
 import ipad from "./imgs/product/ipad.webp";
+import mac from "./imgs/product/mac.png";
 const handler = [
   rest.get(
     "/api/product",
@@ -105,6 +106,54 @@ const handler = [
               ],
             })
           );
+        case "home":
+          return res(
+            ctx.json({
+              total: 10,
+              data: [
+                {
+                  id: "62a3f81760f58bfcbed017e9",
+                  name: "Ipad 1",
+                  category_name: "iphone 13",
+                  image: mac,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed017r4",
+                  name: "mac 11",
+                  category_name: "iphone 13 pro max",
+                  image: mac,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed01734",
+                  name: "mac 111",
+                  category_name: "iphone 13 pro",
+                  image: mac,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed01324",
+                  name: "mac 132",
+                  category_name: "iphone 12",
+                  image: mac,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed017123",
+                  name: "mac 1322",
+                  category_name: "iphone 12",
+                  image: mac,
+                  price: 2000000,
+                  discount_price: null,
+                },
+              ],
+            })
+          );
       }
     }
   ),
@@ -119,9 +168,9 @@ const handler = [
           data: {
             name: "iphone",
             color: {
-              red: [iphone13, ipad, ipad, ipad, ipad, ipad, ipad],
-              blue: [],
-              green: [],
+              red: [iphone13, ipad, mac, ipad, iphone13, mac, ipad],
+              blue: [ipad, ipad, ipad, ipad, ipad],
+              green: [mac, mac, mac, mac, mac],
             },
           },
         })

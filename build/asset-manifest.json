@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/static/css/main.d50790a2.css",
-    "main.js": "/static/js/main.e8be3bb5.js",
+    "main.css": "/static/css/main.f93ab9fc.css",
+    "main.js": "/static/js/main.3c7fef00.js",
     "static/js/787.884e199e.chunk.js": "/static/js/787.884e199e.chunk.js",
     "static/media/banner_2.webp": "/static/media/banner_2.b237faa66729ce4b5850.webp",
     "static/media/banner_1.webp": "/static/media/banner_1.f930ba7fdd0509cd07fa.webp",
     "static/media/ipad.webp": "/static/media/ipad.051867db281c98226390.webp",
+    "static/media/mac.png": "/static/media/mac.53aa983efa4e468a7105.png",
     "static/media/logo.svg": "/static/media/logo.6bf186bfdaf67ac532efdf1746a18631.svg",
     "static/media/product_1.webp": "/static/media/product_1.d93dc840cdca30351d4b.webp",
     "static/media/ip13.webp": "/static/media/ip13.951d3906315f483d86b9.webp",
@@ -21,12 +22,12 @@
     "static/media/facebook.svg": "/static/media/facebook.e2d0ad1fae5e93a27bc8bd991486b1f3.svg",
     "static/media/next.svg": "/static/media/next.3e392b813c43ec5d86e7a49883ce74e1.svg",
     "static/media/prev.svg": "/static/media/prev.2c58d2c0980cba2061168f0f6c23670a.svg",
-    "main.d50790a2.css.map": "/static/css/main.d50790a2.css.map",
-    "main.e8be3bb5.js.map": "/static/js/main.e8be3bb5.js.map",
+    "main.f93ab9fc.css.map": "/static/css/main.f93ab9fc.css.map",
+    "main.3c7fef00.js.map": "/static/js/main.3c7fef00.js.map",
     "787.884e199e.chunk.js.map": "/static/js/787.884e199e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d50790a2.css",
-    "static/js/main.e8be3bb5.js"
+    "static/css/main.f93ab9fc.css",
+    "static/js/main.3c7fef00.js"
   ]
 }
