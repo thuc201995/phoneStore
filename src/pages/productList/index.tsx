@@ -9,7 +9,7 @@ import "./style.scss";
 interface Props {
   category: string;
 }
-const SingleProduct: React.FC<Props> = ({ category }) => {
+const productList: React.FC<Props> = ({ category }) => {
   return (
     <div className="container full_width mt_20">
       <Carousel>
@@ -40,4 +40,4 @@ const SingleProduct: React.FC<Props> = ({ category }) => {
   );
 };
 
-export default SingleProduct;
+export default productList;

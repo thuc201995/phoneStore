@@ -55,9 +55,12 @@ const ProductView: React.FC<Props> = () => {
                     }}
                     key={index}
                     onClick={() =>
-                      setSearchParams({
-                        "mau-sac": c,
-                      })
+                      setSearchParams(
+                        {
+                          "mau-sac": c,
+                        },
+                        { replace: true }
+                      )
                     }
                   ></div>
                 );
