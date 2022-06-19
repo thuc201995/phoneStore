@@ -8,7 +8,7 @@ interface Props {
   category: string;
   className?: string;
 }
-const Accessory: React.FC<Props> = ({ category, className }) => {
+const Product: React.FC<Props> = ({ category, className }) => {
   const {
     data: product,
     isLoading,
@@ -26,7 +26,7 @@ const Accessory: React.FC<Props> = ({ category, className }) => {
       >
         {product?.data.map((item: any) => {
           return (
-            <Col lg={6} xs={12} key={item.id}>
+            <Col lg={8} xs={12} key={item.id}>
               <Link to={item.id}>
                 <CardItem
                   title={item.name}
@@ -43,4 +43,4 @@ const Accessory: React.FC<Props> = ({ category, className }) => {
   );
 };
 
-export default Accessory;
+export default Product;

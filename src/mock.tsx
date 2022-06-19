@@ -154,6 +154,54 @@ const handler = [
               ],
             })
           );
+        case "accessory":
+          return res(
+            ctx.json({
+              total: 10,
+              data: [
+                {
+                  id: "62a3f81760f58bfcbed017e9",
+                  name: "Iphone 13",
+                  category_name: "iphone 13",
+                  image: iphone13,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed017r4",
+                  name: "Iphone 13",
+                  category_name: "iphone 13 pro max",
+                  image: iphone13,
+                  price: 2000000,
+                  discount_price: null,
+                },
+                {
+                  id: "62a3f81760f58bfcbed01734",
+                  name: "Iphone 13",
+                  category_name: "iphone 13 pro",
+                  image: iphone13,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed01324",
+                  name: "Iphone 12",
+                  category_name: "iphone 12",
+                  image: iphone13,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+                {
+                  id: "62a3f81760f58bfcbed017123",
+                  name: "Iphone 12 pro max",
+                  category_name: "iphone 12",
+                  image: iphone13,
+                  price: 2000000,
+                  discount_price: 123456789,
+                },
+              ],
+            })
+          );
       }
     }
   ),

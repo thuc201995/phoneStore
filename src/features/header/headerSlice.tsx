@@ -26,7 +26,7 @@ export const headerSilce = createSlice({
         title: "Âm thanh",
       },
       {
-        link: "/iphone",
+        link: "/phu-kien",
         title: "Phụ kiện",
       },
       {
