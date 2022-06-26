@@ -1,0 +1,25 @@
+@import "../../variable";
+.wrap-slider{
+  .ant-slider-track {
+    background-color: $--e-global-color-5f8e7ea;
+  }
+  .ant-slider-handle {
+    border: 2px solid $--e-global-color-5f8e7ea;
+    &:focus {
+      border-color: $--e-global-color-5f8e7ea
+    }
+  }
+  .ant-slider-handle.ant-tooltip-open {
+    border-color: $--e-global-color-5f8e7ea;
+  }
+  .ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
+    border-color: $--e-global-color-5f8e7ea;
+  }
+  .ant-slider:hover .ant-slider-track{
+    background-color: $--e-global-color-5f8e7ea;
+  }
+  .currency {
+    font-weight: bold;
+    color: $--e-global-color-e5ebd69;
+  }
+}

@@ -1,9 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import {Radio, Space } from 'antd';
 import { Checkbox } from 'antd';
 import _ from "lodash";
 import cn from "classnames";
+import { CheckboxValueType } from 'antd/es/checkbox/Group';
+import {RadioChangeEvent} from "antd/es/radio";
 import "./style.scss";
+
 
 interface Props {
   title: string,
@@ -20,14 +23,12 @@ interface Item {
 }
 const FilterComponent: React.FC<Props> = ({title, type, data, value, className, onChangeValue}) => {
 
-  const onChange = (e: any) => {
-    if(type === "radio"){
-      onChangeValue(e.target.value);
-    }else {
+  const onChangeCheckbox = (e: CheckboxValueType[] ) => {
       onChangeValue(e);
-    }
   };
-
+  const onChangeRadio = (e: RadioChangeEvent) => {
+      onChangeValue(e.target.value);
+  };
 
   return (
     <div className={cn("filter-component", className)}>
@@ -35,7 +36,7 @@ const FilterComponent: React.FC<Props> = ({title, type, data, value, className, 
         {title}
       </div>
       {type === "radio" &&
-        <Radio.Group onChange={onChange} value={value}>
+        <Radio.Group onChange={onChangeRadio} value={value}>
             <Space direction="vertical">
               {!_.isEmpty(data) && data.map((item: any) => (
                 <Radio value={item.value}>{item?.label || ''}</Radio>
@@ -46,7 +47,7 @@ const FilterComponent: React.FC<Props> = ({title, type, data, value, className, 
       {type === "checkbox" && <Checkbox.Group
           options={data}
           defaultValue={value}
-          onChange={onChange}
+          onChange={onChangeCheckbox}
       />}
     </div>
   );

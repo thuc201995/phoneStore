@@ -5,3 +5,5 @@ export enum Status {
   success = "success",
   failure = "failure",
 }
+export const minPriceSlider = 0;
+export const maxPriceSlider = 30000000;

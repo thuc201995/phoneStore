@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
-import {Carousel, SelectComponent} from "../../components";
+import {Carousel, SelectComponent, SliderComponent} from "../../components";
 import {Col, Image, Row} from "antd";
 import banner_1 from "../../imgs/banner/banner_1.webp";
 import banner_2 from "../../imgs/banner/banner_2.webp";
 import {Accessory} from "../../features";
 import FilterComponent from "../../components/filterComponent";
+import useCheckMobileScreen from "../../hooks/useCheckMobileScreen";
+import {maxPriceSlider, minPriceSlider} from "../../common/constants";
+
 import './style.scss';
 
 interface Props {
@@ -53,6 +56,7 @@ const AccessoryPage: React.FC<Props> = ({ category }) => {
   const [itemSelectedProduct, setItemSelectedProduct] = useState('');
   const [listTradeMarkSelected, setListTradeMarkSelected] = useState([]);
   const [listPriceSelected, setListPriceSelected] = useState([]);
+  const [listPriceSlider, setListPriceSlider] = useState([minPriceSlider, maxPriceSlider]) as any;
 
   const handleOnChangeTypeProduct = (value: any) => {
 
@@ -69,8 +73,16 @@ const AccessoryPage: React.FC<Props> = ({ category }) => {
   const handleOnChangePrice = (value: any) => {
     setListPriceSelected(value)
   };
+  const onChangeSlider = (value: number | [number, number]) => {
+    setListPriceSlider(value);
+    console.log('onChange: ', value);
+  };
+
+  const onAfterChange = (value: number | [number, number]) => {
+    console.log('onAfterChange: ', value);
+  };
     return (
-      <div className="container full_width mt_20 accessory">
+      <div className="container mt_20 accessory">
         <h1 className="title-page">Phụ kiện</h1>
           <Carousel>
               <div>
@@ -94,43 +106,86 @@ const AccessoryPage: React.FC<Props> = ({ category }) => {
                   </Image>
               </div>
           </Carousel>
-        <Row className="wrap-select-filter mt_20">
-          <SelectComponent
-            width="250px"
-            placeholder="Sản phẩm tương thích"
-            listData={typeProduct}
-            onChangeValue={(item: any)=> handleOnChangeTypeProduct(item)}/>
-          <SelectComponent
-            width="250px"
-            placeholder="Lọc theo..."
-            listData={listFilter}
-            onChangeValue={(item: any)=> handleOnChangeListFilter(item)}/>
+        <Row className="wrap-select-filter mt_20"
+             gutter={[
+               { xs: 8, sm: 16, md: 16, lg: 24},
+               { xs: 8, sm: 16, md: 16, lg: 24}]}>
+          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+            <SelectComponent
+              width="100%"
+              placeholder="Sản phẩm tương thích"
+              listData={typeProduct}
+              onChangeValue={(item: any)=> handleOnChangeTypeProduct(item)}/>
+          </Col>
+          <Col xs={24} sm={24} md={6} lg={6} xl={6}>
+            <SelectComponent
+              width="100%"
+              placeholder="Lọc theo..."
+              listData={listFilter}
+              onChangeValue={(item: any)=> handleOnChangeListFilter(item)}/>
+          </Col>
         </Row>
         <Row className="mt_20"
              gutter={[
-               { xs: 5, lg: 20 },
-               { xs: 5, lg: 20 },
-             ]}>
+               { xs: 8, sm: 16, md: 16, lg: 24},
+               { xs: 8, sm: 16, md: 16, lg: 24}]}>
           <Col xs={24} sm={24} md={6} lg={6} xl={6}>
-            <FilterComponent title="Danh mục sản phẩm"
-                             type="radio" data={listProduct}
-                             value={itemSelectedProduct}
-                             onChangeValue={(item: any)=> handleOnChangeListProduct(item)}
-            />
-            <FilterComponent className="mt_20"
-                             title="Thương hiệu"
-                             type="checkbox"
-                             data={listTradeMark}
-                             onChangeValue={(listSelect: any)=> handleOnChangeTradeMark(listSelect)}
-                             value={listTradeMarkSelected}
-            />
-            <FilterComponent className="mt_20"
-                             title="Mức giá"
-                             type="checkbox"
-                             data={listPrice}
-                             onChangeValue={(listSelect: any)=> handleOnChangePrice(listSelect)}
-                             value={listPriceSelected}
-             />
+            {useCheckMobileScreen() ?
+              <>
+                <Row  gutter={[
+                  { xs: 8, sm: 16},
+                  { xs: 8, sm: 16}]}>
+                  <Col xs={24} sm={24}>
+                    <SelectComponent
+                      width="100%"
+                      placeholder="Danh mục sản phẩm"
+                      listData={listProduct}
+                      onChangeValue={(item: any)=> handleOnChangeTypeProduct(item)}/>
+                  </Col>
+                  <Col xs={24} sm={24}>
+                    <SelectComponent
+                      width="100%"
+                      placeholder="Thương hiệu"
+                      listData={listTradeMark}
+                      onChangeValue={(item: any)=> handleOnChangeTypeProduct(item)}/>
+                  </Col>
+                  <Col xs={24} sm={24}>
+                    <h2>Lọc theo giá</h2>
+                    <SliderComponent
+                      range={true}
+                      step={0}
+                      min={0}
+                      max={30000000}
+                      defaultValue={listPriceSlider}
+                      onChange={onChangeSlider}
+                      onAfterChange={onAfterChange}/>
+                  </Col>
+                </Row>
+
+              </> :
+              <>
+                <FilterComponent title="Danh mục sản phẩm"
+                                 type="radio" data={listProduct}
+                                 value={itemSelectedProduct}
+                                 onChangeValue={(item: any)=> handleOnChangeListProduct(item)}
+                />
+                <FilterComponent className="mt_20"
+                                 title="Thương hiệu"
+                                 type="checkbox"
+                                 data={listTradeMark}
+                                 onChangeValue={(listSelect: any)=> handleOnChangeTradeMark(listSelect)}
+                                 value={listTradeMarkSelected}
+                />
+                <FilterComponent className="mt_20"
+                                 title="Mức giá"
+                                 type="checkbox"
+                                 data={listPrice}
+                                 onChangeValue={(listSelect: any)=> handleOnChangePrice(listSelect)}
+                                 value={listPriceSelected}
+                />
+              </>
+            }
+
           </Col>
           <Col xs={24} sm={24} md={18} lg={18} xl={18}>
             <Accessory category={category} />
