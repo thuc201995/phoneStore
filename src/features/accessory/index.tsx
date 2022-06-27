@@ -17,12 +17,11 @@ const Product: React.FC<Props> = ({ category, className }) => {
     error,
   } = useGetProductQuery(category);
   return (
-    <div className={cn("container", className)}>
+    <div className={cn("", className)}>
       <Row
         gutter={[
-          { xs: 5, lg: 20 },
-          { xs: 5, lg: 20 },
-        ]}
+          { xs: 8, sm: 8, md: 16, lg: 24},
+          { xs: 8, sm: 8, md: 16, lg: 24}]}
       >
         {product?.data.map((item: any) => {
           return (
