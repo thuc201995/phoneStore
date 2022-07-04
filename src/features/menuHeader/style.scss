@@ -1,0 +1,74 @@
+@import "../../variable.scss";
+.menu-custom {
+  width: 76%;
+  .header_menu {
+    min-width: 76%;
+    background-color: transparent;
+    color: $color-header;
+    border-bottom: none;
+    .ant-menu-item {
+      padding: 0 !important;
+      top: 0;
+
+      .ant-menu-title-content {
+        font-size: 15px;
+        padding: 0 22px;
+        text-transform: capitalize;
+      }
+
+      &:hover,
+      &.ant-menu-item-selected {
+        color: #fff;
+        background-color: #3f3f3f;
+
+        &::after {
+          display: none;
+        }
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .menu-custom {
+    width: 100%;
+    background-color: $color-white;
+    line-height: 47px;
+    display: flex;
+    justify-content: center;
+    .header_menu {
+      width: 100%;
+      padding: 0 30px;
+      color: $color-black;
+      .ant-menu-item {
+        top: 0;
+        padding: 0 20px !important;
+        .ant-menu-title-content {
+          font-size: 15px;
+          padding: 0;
+          text-transform: capitalize;
+        }
+
+        &:hover,
+        &.ant-menu-item-selected {
+          color: $color-blue;
+          background-color: transparent;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+      .ant-menu-item:first-child {
+        padding-left: 0 !important;
+      }
+    }
+  }
+}

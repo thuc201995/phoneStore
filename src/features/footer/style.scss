@@ -1,11 +1,27 @@
+@import "../../variable.scss";
+
 .store_footer {
-  background: #1d1d1f !important;
+  background: $background-footer !important;
   display: flex;
   justify-content: center;
   padding: 50px 0 !important;
+  .container {
+    .ant-row {
+      justify-content: space-between;
+    }
+  }
   .footer_icon_item {
     margin-right: 15px;
     width: 45px;
     height: 45px;
+  }
+  .ant-collapse-borderless {
+    background-color: transparent;
+    .ant-collapse-header {
+      color: $color-text-footer !important;
+    }
+    .ant-collapse-item {
+      border-bottom: 1px solid $color-border;
+    }
   }
 }

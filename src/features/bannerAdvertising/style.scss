@@ -1,0 +1,11 @@
+.baner-advertising {
+  cursor: pointer;
+  .ant-image-img {
+    max-height: 350px;
+  }
+  @media only screen and (max-width: 768px) {
+  .ant-image-img {
+    max-height: 230px;
+  }
+}
+}

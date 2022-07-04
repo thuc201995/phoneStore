@@ -1,0 +1,64 @@
+@import "../../variable.scss";
+
+.drawer-search-bar {
+  .ant-drawer-content-wrapper {
+    box-shadow: none !important;
+    height: auto !important;
+  }
+  .ant-drawer-content {
+    background-color: transparent;
+  }
+  .ant-drawer-header {
+    height: 64px;
+    background-color: $background-search-bar;
+    flex-direction: row-reverse;
+    border: none;
+    .ant-drawer-header-title {
+      display: none;
+      .ant-drawer-close {
+        color: $color-white;
+      }
+    }
+    .ant-drawer-extra {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      .ant-input-search {
+        width: 560px;
+        .ant-input-affix-wrapper {
+          height: 50px;
+          padding: 0;
+          background-color: $background-search-bar;
+          border: none;
+          box-shadow: none;
+          .ant-input-prefix {
+            margin-right: 10px;
+          }
+        }
+        .ant-input {
+          color: $color-white;
+          background-color: $background-search-bar;
+        }
+        .ant-input:hover,
+        .ant-input:focus {
+          border-color: $background-search-bar;
+          box-shadow: none;
+        }
+        .ant-input-group-addon {
+          display: none;
+        }
+      }
+    }
+  }
+  .ant-drawer-body {
+    flex-grow: unset;
+    width: 560px;
+    margin: 0 auto;
+    background-color: $color-white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    .ant-spin {
+      width: 100%;
+    }
+  }
+}

@@ -8,13 +8,13 @@
   justify-content: center;
   text-align: center;
   .store_subscriber_title {
-    color: $--e-global-color-e5ebd69;
+    color: $color-black;
     font-size: 24px;
     font-weight: 600;
     line-height: 36px;
   }
   .store_subscriber_description {
-    color: $--e-global-color-e5ebd69;
+    color: $color-black;
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
@@ -37,7 +37,7 @@
       font-family: "SF Pro Text", Arial;
       font-size: 15px;
       font-weight: 500;
-      background-color: $--e-global-color-ab81b1d;
+      background-color: $color-blue;
       color: #fff;
       height: 40px;
       padding-left: 60px;
