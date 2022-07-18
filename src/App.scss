@@ -37,6 +37,12 @@ body {
 .mb_0 {
   margin-bottom: 0 !important;
 }
+.mb_20 {
+  margin-bottom: 20px !important;
+}
+.mb_40 {
+  margin-bottom: 40px !important;
+}
 .mb_50 {
   margin-bottom: 50px !important;
 }
@@ -49,11 +55,17 @@ body {
 .mt_20 {
   margin-top: 20px !important;
 }
+.mt_30 {
+  margin-top: 30px !important;
+}
+.mt_50 {
+  margin-top: 50px !important;
+}
 
 .mr_5 {
   margin-right: 5px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
   .container:not(.full_width) {
     padding: 20px;
   }

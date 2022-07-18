@@ -1,0 +1,58 @@
+@import "../../variable.scss";
+.drawer-stote {
+  width: 100%;
+  .ant-drawer-content-wrapper {
+    width: 100% !important;
+    .ant-drawer-header {
+      background-color: $color-background-drawer;
+    }
+    .ant-drawer-content {
+      background-color: $color-background-drawer;
+    }
+    .ant-drawer-body {
+      padding: 40px;
+    }
+    .ant-drawer-header,
+    .ant-drawer-header-title {
+      justify-content: flex-end;
+      .ant-drawer-close {
+        margin-right: 0;
+      }
+    }
+  }
+  .ant-input-group .ant-input {
+    border: none;
+    height: 40px;
+  }
+  .ant-input-search-button {
+    height: 40px;
+  }
+  .ant-input {
+    border-right: none;
+    border-radius: 9px;
+    &:hover {
+      border-color: transparent !important;
+    }
+    &:focus {
+      border-color: transparent !important;
+      box-shadow: none;
+    }
+  }
+  .ant-btn {
+    border-left: 0;
+    border-radius: 0 9px 9px 0 !important;
+    border: none;
+    &:hover {
+      border-color: transparent !important;
+    }
+    &:focus {
+      border-color: transparent !important;
+    }
+  }
+  p {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0;
+    border-top: 1px solid #ebebeb;
+  }
+}

@@ -4,3 +4,6 @@ export { default as Subscriber } from "./subscriber";
 export { default as Product } from "./product";
 export { default as ProductView } from "./productView";
 export { default as Accessory } from "./accessory";
+export { default as MenuHeader } from "./menuHeader";
+export { default as SearchBar } from "./searchBar";
+export { default as BannerAdvertising } from "./bannerAdvertising";

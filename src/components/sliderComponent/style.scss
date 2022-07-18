@@ -1,25 +1,25 @@
 @import "../../variable";
 .wrap-slider{
   .ant-slider-track {
-    background-color: $--e-global-color-5f8e7ea;
+    background-color: $color-grey;
   }
   .ant-slider-handle {
-    border: 2px solid $--e-global-color-5f8e7ea;
+    border: 2px solid $color-grey;
     &:focus {
-      border-color: $--e-global-color-5f8e7ea
+      border-color: $color-grey
     }
   }
   .ant-slider-handle.ant-tooltip-open {
-    border-color: $--e-global-color-5f8e7ea;
+    border-color: $color-grey;
   }
   .ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
-    border-color: $--e-global-color-5f8e7ea;
+    border-color: $color-grey;
   }
   .ant-slider:hover .ant-slider-track{
-    background-color: $--e-global-color-5f8e7ea;
+    background-color: $color-grey;
   }
   .currency {
     font-weight: bold;
-    color: $--e-global-color-e5ebd69;
+    color: $color-black;
   }
 }

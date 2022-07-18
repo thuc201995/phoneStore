@@ -1,7 +1,7 @@
 import React from "react";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
-import { Layout, Row, Col, Divider } from "antd";
+import { Layout, Row, Col, Divider, Collapse } from "antd";
 import { ReactComponent as Logo } from "../../imgs/logo.svg";
 import { ReactComponent as Facebook } from "../../imgs/facebook.svg";
 import { ReactComponent as Youtube } from "../../imgs/youtube.svg";
@@ -9,19 +9,23 @@ import { ReactComponent as Zalo } from "../../imgs/zalo.svg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
+import { useCheckMobileScreen } from "../../hooks";
+
 import "./style.scss";
+
 type Props = {};
 const { Footer } = Layout;
+const { Panel } = Collapse;
 
 const FooterContainer: React.FC<Props> = () => {
   const { i18n } = useTranslation();
-  const data = useSelector((state: RootState) => state.footer);
+  const data = useSelector((state: RootState) => state.footer.dataFooter);
 
   return (
     <Footer className={cn("store_footer")}>
       <div className="container">
-        <Row className="mb_60">
-          <Col lg={6} xs={24}>
+        <Row className="mb_40" gutter={[16, 24]}>
+          <Col xs={24} sm={24} md={24} lg={5}>
             <Row gutter={[0, 18]}>
               <Col>
                 <Logo />
@@ -41,7 +45,8 @@ const FooterContainer: React.FC<Props> = () => {
               </Col>
             </Row>
           </Col>
-          <Col lg={{ span: 3, offset: 1 }} xs={24}>
+
+          {/* <Col lg={{ span: 3, offset: 1 }} xs={24}>
             <h2 className="heading_title">Sản phẩm</h2>
             {data.sanPham.map((item, index) => {
               return (
@@ -97,10 +102,56 @@ const FooterContainer: React.FC<Props> = () => {
                 </div>
               );
             })}
-          </Col>
+          </Col> */}
+          {useCheckMobileScreen() ? (
+            <>
+              <Col xs={24} sm={24} md={24} lg={24}>
+                <Collapse bordered={false} expandIconPosition="right">
+                  {data.map((item: any, idx: number) => (
+                    <Panel header={item.label} key={idx}>
+                      {item.data.map((elm: any, idxItem: number) => {
+                        return (
+                          <div key={idxItem}>
+                            <Link
+                              to={elm.link}
+                              className="content_7a7a7a capitalize"
+                            >
+                              {elm.title}
+                            </Link>
+                          </div>
+                        );
+                      })}
+                    </Panel>
+                  ))}
+                </Collapse>
+              </Col>
+            </>
+          ) : (
+            <>
+              {data.map((item: any, idx: number) => (
+                <Col xs={6} sm={6} md={6} lg={3}>
+                  <div key={idx}>
+                    <h2 className="heading_title">{item.label}</h2>
+                    {item.data.map((elm: any, idxItem: number) => {
+                      return (
+                        <div key={idxItem}>
+                          <Link
+                            to={elm.link}
+                            className="content_7a7a7a capitalize"
+                          >
+                            {elm.title}
+                          </Link>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </Col>
+              ))}
+            </>
+          )}
         </Row>
         <Row>
-          <Divider className="divide_424245" />
+          {/* <Divider className="divide_424245" /> */}
           <Col className="content_7a7a7a">
             <div>
               © 2016 Công ty Cổ Phần HESMAN Việt Nam GPDKKD: 0107465657 do Sở KH

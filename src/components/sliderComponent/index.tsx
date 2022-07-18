@@ -1,5 +1,5 @@
 import React from 'react';
-import _ from "lodash";
+import { isNumber } from "lodash";
 import { Slider } from 'antd';
 import {SliderRangeProps} from "antd/es/slider";
 import "./style.scss";
@@ -8,7 +8,7 @@ interface Props extends SliderRangeProps{
   props?: SliderRangeProps
 }
 const formatCurrency = (num: number | undefined) => {
-  if(!_.isNumber(num))
+  if(!isNumber(num))
     return 0;
   return num.toLocaleString('en-US', {style : 'currency', currency : 'VND'});
 };
